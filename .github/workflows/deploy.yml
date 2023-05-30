@@ -23,3 +23,4 @@ jobs:
           project: "deno-langchain"
           entrypoint: "main.ts" # 📝 Update the entrypoint
           root: "."
+          import-map: import_map.json
