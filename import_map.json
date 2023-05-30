@@ -1,6 +1,0 @@
-{
-    "imports": {
-        "langchain/": "https://esm.sh/langchain@0.0.84/",
-        "cheerio": "https://esm.sh/cheerio@1.0.0-rc.12"
-    }
-}

@@ -1,11 +1,11 @@
 import { load } from "https://deno.land/std/dotenv/mod.ts";
 import { serve } from "https://deno.land/std@0.189.0/http/server.ts";
 
-import { CheerioWebBaseLoader } from "langchain/document_loaders/web/cheerio";
-import { OpenAIEmbeddings } from "langchain/embeddings/openai";
-import { MemoryVectorStore } from "langchain/vectorstores/memory";
-import { OpenAI } from "langchain/llms/openai";
-import { RetrievalQAChain } from "langchain/chains";
+import { CheerioWebBaseLoader } from "https://esm.sh/langchain@0.0.84/document_loaders/web/cheerio";
+import { OpenAIEmbeddings } from "https://esm.sh/langchain@0.0.84/embeddings/openai";
+import { MemoryVectorStore } from "https://esm.sh/langchain@0.0.84/vectorstores/memory";
+import { OpenAI } from "https://esm.sh/langchain@0.0.84/llms/openai";
+import { RetrievalQAChain } from "https://esm.sh/langchain@0.0.84/chains";
 
 const env = await load();
 
