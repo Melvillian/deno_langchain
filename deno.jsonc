@@ -1,8 +1,9 @@
 {
   "tasks": {
-    "dev": "deno run --watch --allow-net --allow-read --allow-env main.ts"
+    "dev": "deno run --node-modules-dir --watch --allow-net --allow-read --allow-env main.ts"
   },
   "imports": {
-    "langchain/": "npm:/langchain@0.0.84/"
+    "langchain/": "npm:/langchain@0.0.84/",
+    "cheerio": "npm:cheerio@1.0.0-rc.12"
   }
 }

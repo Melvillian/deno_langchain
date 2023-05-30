@@ -11,9 +11,12 @@ const env = await load();
 
 const handler = async (request: Request): Promise<Response> => {
   
-  const loader = new CheerioWebBaseLoader(
-    "https://en.wikipedia.org/wiki/Brooklyn"
-  );
+  const { searchParams } = new URL(request.url);
+
+  const wikiPage = searchParams.get('page') ?? "https://en.wikipedia.org/wiki/Brooklyn";
+
+  const loader = new CheerioWebBaseLoader(wikiPage);
+
   // load wiki page and split into smaller documents
   const docs = await loader.loadAndSplit();
 
@@ -26,7 +29,6 @@ const handler = async (request: Request): Promise<Response> => {
 
   // our prompt
   // const question = "What is this article about? Can you give me 3 facts about it?";
-  const { searchParams } = new URL(request.url);
   const question = searchParams.get('question') ?? "What is this article about? Can you give me 3 facts about it?";
 
   const res = await chain.call({
