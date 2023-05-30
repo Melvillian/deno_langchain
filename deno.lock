@@ -771,6 +771,7 @@
   "npm": {
     "specifiers": {
       "cheerio@1.0.0-rc.12": "cheerio@1.0.0-rc.12",
+      "cheerio@^1.0.0-rc.12": "cheerio@1.0.0-rc.12",
       "langchain": "langchain@0.0.84_zod@3.21.4",
       "langchain@0.0.84": "langchain@0.0.84_zod@3.21.4",
       "langchain@latest": "langchain@0.0.84_zod@3.21.4"

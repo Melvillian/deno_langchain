@@ -2,5 +2,6 @@
   "tasks": {
     "dev": "deno run --watch --allow-net --allow-read --allow-env main.ts"
   },
-  "importMap": "./import_map.json"
+  "importMap": "./import_map.json",
+  "nodeModulesDir": true
 }
