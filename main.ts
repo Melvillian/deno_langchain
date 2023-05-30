@@ -1,10 +1,22 @@
-export function add(a: number, b: number): number {
-  return a + b;
-}
+import { serve } from "https://deno.land/std@0.189.0/http/server.ts";
 
-// Learn more at https://deno.land/manual/examples/module_metadata#concepts
-if (import.meta.main) {
-  console.log("Add 2 + 3 =", add(2, 3));
-} else {
-  console.log("no import.meta.main")
-}
+const handler = async (_request: Request): Promise<Response> => {
+  const resp = await fetch("https://api.github.com/users/denoland", {
+    // The init object here has an headers object containing a
+    // header that indicates what type of response we accept.
+    // We're not specifying the method field since by default
+    // fetch makes a GET request.
+    headers: {
+      accept: "application/json",
+    },
+  });
+
+  return new Response(resp.body, {
+    status: resp.status,
+    headers: {
+      "content-type": "application/json",
+    },
+  });
+};
+
+serve(handler);
